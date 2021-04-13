@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 - 2021 Volker Berlin (i-net software)
+ * Copyright 2021 Volker Berlin (i-net software)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,27 +16,23 @@
 package de.inetsoftware.jwebassembly.web.dom;
 
 /**
- * https://developer.mozilla.org/en-US/docs/Web/API/Element
+ * https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement
  * 
  * @author Volker Berlin
  */
-public class Element extends Node {
+public class HTMLButtonElement extends HTMLElement {
 
     /**
-     * Create a Java instance as wrapper of the JavaScript object.
+     * Create a Java instance as wrapper of the DOM object.
      * 
      * @param peer
-     *            the native JavaScript object
+     *            the native DOM object
      */
-    Element( Object peer ) {
+    HTMLButtonElement( Object peer ) {
         super( peer );
     }
 
-    /**
-     * https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName
-     * @return the tag name
-     */
-    public String tagName() {
-        return get( "tagName" );
+    public NodeList labels() {
+        return new NodeList( get( "labels" ) );
     }
 }
